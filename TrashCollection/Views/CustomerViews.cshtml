@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace TrashCollection.Views
+{
+
+model IEnumerable<TrashCollection.Models.CustomerModel>
+{
+    ViewBag.Title = "Customers";
+}
+
+<h2>Customers</h2>
+Html.ActionLink("Add Customer", "Schedule", "Customers")
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+    <th>Customer</th>
+    </tr>
+    </thead>
+    <tbody>
+        foreach (var Day in Model)
+        {
+            <tr>
+        <td>Html.ActionLink(Customer.ZipCode, "Schedule", "Customers", new { id = Customer.Id }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+public void CreateDatePicker()
+    {
+    [System.Windows.TemplatePart(Name="PART_Root", Type=typeof(System.Windows.Controls.Grid))]
+    [System.Windows.TemplatePart(Name="PART_TextBox", Type=typeof(System.Windows.Controls.Primitives.DatePickerTextBox))]
+    [System.Windows.TemplatePart(Name="PART_Button", Type=typeof(System.Windows.Controls.Button))]
+    [System.Windows.TemplatePart(Name="PART_Popup", Type=typeof(System.Windows.Controls.Primitives.Popup))]
+    public class DatePicker : System.Windows.Controls.Control
+
+}
+	}
+}

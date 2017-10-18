@@ -1,0 +1,122 @@
+﻿@model TrashCollection.Models.CustomerModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CustomerModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollectionCharge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollectionCharge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerCityState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerCityState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeeklyPickUpDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeeklyPickUpDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CancelWeeklyPickUp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CancelWeeklyPickUp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RescheduleWeeklyPickUp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RescheduleWeeklyPickUp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonthlyBill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonthlyBill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentBalance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
