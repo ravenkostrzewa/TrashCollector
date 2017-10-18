@@ -209,8 +209,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\EmployeeModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\DaysModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\CustomerModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,7 +221,7 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
-    <None Include="Views\Customer\Employee.cshtml" />
+    <None Include="Views\Employee\Employee.cshtml" />
     <Content Include="Views\CustomerViews.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -286,6 +287,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Account\Account\" />
+    <Folder Include="Views\Account\App_LocalResources\" />
+    <Folder Include="Views\Account\NewFolder1\" />
     <Folder Include="Views\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>

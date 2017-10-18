@@ -6,7 +6,7 @@ using System.Web;
 
 namespace TrashCollection.Models
 {
-    public class EmployeeModels
+    public class EmployeeModel
     {
         [Key]
         public int EmployeeId { get; set; }

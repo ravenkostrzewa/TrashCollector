@@ -21,7 +21,9 @@ namespace TrashCollection.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
-        public DbSet<EmployeeModels> Employees { get; set; }
+        public DbSet<EmployeeModel> Employees { get; set; }
+
+        public DbSet<DaysModel> Days { get; set; }
 
         public DbSet<CustomerModel> Customers { get; set; }
         public ApplicationDbContext()

@@ -19,6 +19,8 @@ namespace TrashCollection.Models
         public string WeeklyPickUpDay { get; set; }
         public bool CancelWeeklyPickUp { get; set; }
         public bool RescheduleWeeklyPickUp { get;  set;}
+        public bool ChangeWeeklyPickUp { get; set; }
+        public string NewPickUpDay { get; set; }
         public int CollectionCharge { get; set; }
         public int PickUpsThisMonth { get; set; }
         public int MonthlyBill { get; set; }

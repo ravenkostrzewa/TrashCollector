@@ -27,7 +27,7 @@ namespace TrashCollection.Controllers
         public ActionResult Sort()
         {
             var TodaysPickUps = db.Customers.Where(m => m.WeeklyPickUpDay == DateTime.Now.DayOfWeek.ToString()).ToList();
-            //var customerAddresses = db.Employees.Include(m => m.CustomerAddress).ToList();
+            var customerAddresses = db.Employees.Include(m => m.CustomerAddress).ToList();
             return View("Employee", TodaysPickUps);
         }
 
@@ -37,35 +37,17 @@ namespace TrashCollection.Controllers
             return View();
         }
 
-        public void GoogleMaps()
-        {
-            //var latlng = new google.maps.LatLng(43, 88);
-            //var myOptions = { zoom: 8, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP};
-            //var map = new google.maps.Map(document.getElementById("map"), myOptions);
-            //return ;
-        }
-
-        //    //public PayPal()
-        //    //{
-
-        //    //}
-
-        //public ActionResult Zip()
+        //public void GoogleMaps()
         //{
-        //    var EmployeeZip;
-        //    var CustomerZip;
-        //    {
-        //        foreach (EmployeeZip == CustomerZip)
-        //        {
-        //            if (WeeklyPickUpDay == Today)
-        //        {
-        //                if (CancelWeeklyPickUpDay == false)
-        //            {
-        //                    CustomerAddress.Add; //to route
-        //                }
-        //                return CollectionRoute;
-        //            }
-        //        }
-        //        }
+        //    var latlng = new google.maps.LatLng(43, 88);
+        //    var myOptions = { zoom: 8, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP};
+        //    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+        //    return Map;
+        //}
+
+        ////    //public PayPal()
+        ////    //{
+
+        ////    //}
     }
 }
