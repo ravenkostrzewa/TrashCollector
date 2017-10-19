@@ -23,8 +23,6 @@ namespace TrashCollection.Models
 
         public DbSet<EmployeeModel> Employees { get; set; }
 
-        public DbSet<DaysModel> Days { get; set; }
-
         public DbSet<CustomerModel> Customers { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

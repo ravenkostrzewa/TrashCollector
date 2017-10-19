@@ -35,10 +35,9 @@ namespace TrashCollection.Controllers
             return View(customerModel);
         }
 
-        // GET: Customer/Create
+        //GET: Customer/Create
         public ActionResult Create()
         {
-
             return View();
         }
 
@@ -47,7 +46,30 @@ namespace TrashCollection.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerId,CustomerEmail,CustomerPassword,CustomerName,CustomerStreet,CustomerCityState,CustomerZip,WeeklyPickUpDay,CancelWeeklyPickUp,RescheduleWeeklyPickUp,CollectionCharge,MonthlyBill,PaymentAmount,CurrentBalance")] CustomerModel customerModel)
+        public ActionResult Create([Bind(Include = "CustomerName,CustomerStreet,CustomerCityState,CustomerZip,WeeklyPickUpDay,CancelWeeklyPickUp,RescheduleWeeklyPickUp,CollectionCharge,MonthlyBill,PaymentAmount,CurrentBalance")] CustomerModel customerModel)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Customers.Add(customerModel);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(customerModel);
+        }
+        // GET: CustomerInformation/Create
+        public ActionResult CustomerInformation()
+        {
+
+            return View();
+        }
+
+        // POST: CustomerInformation/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CustomerInformation([Bind(Include = "CustomerId,CustomerEmail,CustomerPassword")] CustomerModel customerModel)
         {
             if (ModelState.IsValid)
             {

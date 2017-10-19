@@ -1,0 +1,172 @@
+﻿@model TrashCollection.Models.CustomerModel
+
+@{
+    ViewBag.Title = "Customer Information";
+}
+
+<h2>Customer Information</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Submit your Information and have your Trash Collected on your Schedule!</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.CustomerEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerStreet, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerStreet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerStreet, "Enter your street address.", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerCityState, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerCityState, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerCityState, "Enter your city and state in the following format: City, State", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerZip, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerZip, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerZip, "Enter your 5-digit zip code.", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.DropDownListFor(model => model.WeeklyPickUpDay, new SelectList(Enum.GetValues(typeof(DayOfWeek))),
+                    "Select Day")
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.WeeklyPickUpDay, "Which day of the week would you like your trash collected?", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CancelWeeklyPickUp, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    <div class=".sub-menu{text-align:left}">
+                         @Html.EditorFor(model => model.CancelWeeklyPickUp)
+                         @Html.ValidationMessageFor(model => model.CancelWeeklyPickUp, "Check the box to cancel your trash collection this week.", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RescheduleWeeklyPickUp, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.RescheduleWeeklyPickUp)
+                    @Html.ValidationMessageFor(model => model.RescheduleWeeklyPickUp, "Check the box to reschedule your trash pick up this week.", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+//only if rescheduleweeklypickup == yes
+        <div class="form-group">
+            @Html.DropDownListFor(model => model.RescheduledDay, new SelectList(Enum.GetValues(typeof(DayOfWeek))),
+                    "Select Day")
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.RescheduledDay, "When would you like your trash to be collected from now on?", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChangeWeeklyPickUp, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.ChangeWeeklyPickUp)
+                    @Html.ValidationMessageFor(model => model.ChangeWeeklyPickUp, "Check the box to change your trash collection day.", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+//only if changeweeklypickup == yes
+        <div class="form-group">
+            @Html.DropDownListFor(model => model.NewPickUpDay, new SelectList(Enum.GetValues(typeof(DayOfWeek))),
+                    "Select Day")
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.NewPickUpDay, "When would you like your trash to be collected from now on?", new { @class = "text-danger" })
+            </div>
+        </div>
+//not userinput
+        <div class="form-group">
+            @Html.LabelFor(model => model.CollectionCharge, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.CollectionCharge, "Cost per Trash Collection: $", new { @class = "text-danger" })
+            </div>
+        </div>
+//not userinput
+        <div class="form-group">
+            @Html.LabelFor(model => model.PickUpsThisMonth, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.PickUpsThisMonth, "Number of Trash Collections this Month:", new { @class = "text-danger" })
+            </div>
+        </div>
+//not userinput
+        <div class="form-group">
+            @Html.LabelFor(model => model.MonthlyBill, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.MonthlyBill, "Your Monthly Trash Collection Expediture:", new { @class = "text-danger" })
+            </div>
+        </div>
+        //not userinput
+        <div class="form-group">
+            @Html.LabelFor(model => model.CurrentBalance, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                 @Html.ValidationMessageFor(model => model.CurrentBalance, "Your Current Balance:", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PaymentAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PaymentAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PaymentAmount, "Enter the amount of money you would like to pay in dollars. Use a decimal point if needed.", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

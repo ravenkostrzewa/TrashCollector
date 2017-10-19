@@ -13,17 +13,15 @@ namespace TrashCollection.Models
         public string CustomerEmail { get; set; }
         public string CustomerPassword { get; set; }
 
-        [Key]
+        
         public string CustomerName { get; set; }
         public string CustomerStreet { get; set; }
         public string CustomerCityState { get; set; }
-        public int CustomerZip { get; set; }
+        public string CustomerZip { get; set; }
         public string WeeklyPickUpDay { get; set; }
-
-        [Key]
-        //show WeeklyPickUpDay
         public bool CancelWeeklyPickUp { get; set; }
         public bool RescheduleWeeklyPickUp { get;  set;}
+        public string RescheduledDay { get; set; }
         public bool ChangeWeeklyPickUp { get; set; }
         public string NewPickUpDay { get; set; }
         public int CollectionCharge { get; set; }//not userinput
