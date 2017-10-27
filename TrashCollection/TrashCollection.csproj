@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -207,24 +208,9 @@
     <Compile Include="Migrations\201710171641345_inital migration.Designer.cs">
       <DependentUpon>201710171641345_inital migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710191905508_deleted DaysModel.cs" />
-    <Compile Include="Migrations\201710191905508_deleted DaysModel.Designer.cs">
-      <DependentUpon>201710191905508_deleted DaysModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710191950137_Instructor Test.cs" />
-    <Compile Include="Migrations\201710191950137_Instructor Test.Designer.cs">
-      <DependentUpon>201710191950137_Instructor Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710192031446_created userinput table in customer information.cs" />
-    <Compile Include="Migrations\201710192031446_created userinput table in customer information.Designer.cs">
-      <DependentUpon>201710192031446_created userinput table in customer information.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710192042465_edited customer table.cs" />
-    <Compile Include="Migrations\201710192042465_edited customer table.Designer.cs">
-      <DependentUpon>201710192042465_edited customer table.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Day.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -236,10 +222,14 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Customer\Calendar.cshtml" />
-    <Content Include="Views\Customer\CustomerInformation.cshtml" />
+    <Content Include="Views\Employee\CreateEmployee.cshtml" />
+    <Content Include="Views\Employee\DeleteEmployee.cshtml" />
+    <Content Include="Views\Employee\EditEmployee.cshtml" />
     <None Include="Views\Employee\Employee.cshtml" />
     <Content Include="Views\CustomerViews.cshtml" />
+    <Content Include="Views\Employee\EmployeeIndex.cshtml" />
+    <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Employee\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -308,6 +298,7 @@
     <Folder Include="Views\Account\App_LocalResources\" />
     <Folder Include="Views\Account\NewFolder1\" />
     <Folder Include="Views\App_LocalResources\" />
+    <Folder Include="Views\Day\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -320,18 +311,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710171641345_inital migration.resx">
       <DependentUpon>201710171641345_inital migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710191905508_deleted DaysModel.resx">
-      <DependentUpon>201710191905508_deleted DaysModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710191950137_Instructor Test.resx">
-      <DependentUpon>201710191950137_Instructor Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710192031446_created userinput table in customer information.resx">
-      <DependentUpon>201710192031446_created userinput table in customer information.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710192042465_edited customer table.resx">
-      <DependentUpon>201710192042465_edited customer table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeIndex";
+}
+
+<h2>EmployeeIndex</h2>
+
+@model TrashCollection.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "Employee";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeEmail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }) 
+    @Html.ActionLink("Back to List", "Index")
+</p>
